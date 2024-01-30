@@ -65,7 +65,7 @@ class WordsOfPowerVault():
 
         drawing_path = self.get_new_drawing_path(abc, symbol, tag=tag)
         print(f"SAVING DRAWING: {abc}/{symbol}"
-              " - {n_points} points in {n_curves} curves")
+              f" - {n_points} points in {n_curves} curves")
         print(f"  @ {drawing_path}")
         save_drawing(drawing_path, curves.curves)
 
