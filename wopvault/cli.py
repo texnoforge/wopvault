@@ -8,6 +8,8 @@ import click
 
 from wopvault import __version__
 from wopvault import ex
+from wopvault import config
+from wopvault import common
 from wopvault import server as wopserver
 
 
@@ -36,12 +38,32 @@ def server():
     wopserver.run_server()
 
 
+@cli.command(name='config')
+def config_():
+    """
+    Show Words of Power Vault config.
+    """
+    print(f"# USER config: {config.USER_CONFIG_PATH}")
+    if config.user_cfg:
+        common.pretty_print_cfg(config.user_cfg)
+    else:
+        print("  - doesn't exist\n")
+
+    print(f"# SITE config: {config.SITE_CONFIG_PATH}")
+    if config.site_cfg:
+        common.pretty_print_cfg(config.site_cfg)
+    else:
+        print("  - doesn't exist\n")
+
+    print("# EFFECTIVE config:")
+    common.pretty_print_cfg(config.cfg)
+
+
 def main():
     try:
         cli()
     except ex.WoPVaultException as e:
         sys.exit(e.returncode)
-
 
 
 if __name__ == '__main__':
