@@ -28,17 +28,10 @@ def cli():
     """
 
 
-@cli.group()
+@cli.command()
 def server():
     """
-    Manage Words of Power Vault server.
-    """
-
-
-@server.command()
-def run():
-    """
-    Start Words of Power Vault server.
+    Start Words of Power Vault API server.
     """
     wopserver.run_server()
 
