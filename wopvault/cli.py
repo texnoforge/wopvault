@@ -40,7 +40,7 @@ def run():
     """
     Start Words of Power Vault server.
     """
-    wopserver.run_app()
+    wopserver.run_server()
 
 
 def main():
