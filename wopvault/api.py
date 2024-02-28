@@ -43,4 +43,4 @@ async def submit_drawing(abc: str, symbol: str, drawing: Drawing,
 
 @app.get("/status/")
 async def status():
-    return {"status": "ready"}
+    return {"status": "ok"}
