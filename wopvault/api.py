@@ -38,7 +38,10 @@ async def submit_drawing(abc: str, symbol: str, drawing: Drawing,
         raise HTTPException(e.statuscode,
             detail=f"Drawing too big: {e.args[0]} points (max: {e.args[1]})")
 
-    return {"status": "ok", "abc": abc, "symbol": symbol}
+    r = {"status": "ok", "abc": abc, "symbol": symbol}
+    if tag:
+        r['tag'] = tag
+    return r
 
 
 @app.get("/status/")
