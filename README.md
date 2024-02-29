@@ -3,13 +3,15 @@
 This is a trivial Python 3.10+ FastAPI server with a singular purpose of
 colleting user generated [Words of Power] / [TexnoMagic] content.
 
-This software can be used to collect user drawings through a REST API and save
-them into CSV files for further processing.
+This software can be used to collect user drawings as a series of points through
+a REST API and save them into CSV files for further processing.
+
+See [woptrainer] for a Godot client implemention.
 
 
-## Status
+## Status: alpha
 
-**Alpha** - it kinda works :)
+It seems to work fine :)
 
 
 ## Installation
@@ -44,6 +46,9 @@ You can start `uvicorn` dev server using
 `wopvault.api` is based on FastAPI,
 feel free to use `wopvault.api:app` as you need.
 
+See [woptrainer] for a Godot client implementation.
+
 
 [Words of Power]: https://texnoforge.dev/words-of-power/
 [TexnoMagic]: https://texnoforge.github.io/texnomagic/
+[woptrainer]: https://github.com/texnoforge/woptrainer/
